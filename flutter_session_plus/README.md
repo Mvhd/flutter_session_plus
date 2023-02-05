@@ -11,12 +11,11 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+TODO: originally built by Jhourlad Estrella in 2020 but stoped maintaining the code and so breaking in subsequent flutter update. I have updated it with null safety compliance. The package is used to manage sessions in flutter app.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+TODO: The package is used to manage sessions by storing varibales.
 
 ## Getting started
 
