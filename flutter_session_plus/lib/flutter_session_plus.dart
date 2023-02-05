@@ -2,7 +2,7 @@
 library flutter_session_plus;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-/// A Calculator.
+
 class FlutterSession {
   /// Initialize session container
   final Map _session = {};
