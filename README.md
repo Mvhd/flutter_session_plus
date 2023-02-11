@@ -16,9 +16,9 @@ TODO: This package is used to manage sessions in flutter applications.
 ## Features
 
 
-  call class ```dart FlutterSession() ``` and chain it with the functions below
-  use ```dart set('userName', userName) ``` to save a variable
-  use ```dart get('userName') ``` to retrieve into a variable for your use
+  call class ``` FlutterSession() ``` and chain it with the functions below
+  use ``` set('userName', userName) ``` to save a variable
+  use ``` get('userName') ``` to retrieve into a variable for your use
 
 
 ## Getting started
