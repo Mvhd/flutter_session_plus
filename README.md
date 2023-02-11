@@ -15,25 +15,25 @@ TODO: This package is used to manage sessions in flutter applications.
 
 ## Features
 
-```dart
-  call class FlutterSession() and chain it with the functions below
-  use set('userName', userName) to save a variable
-  use get('userName') to retrieve into a variable for your use
-```
+
+  call class ```dart FlutterSession() ``` and chain it with the functions below
+  use ```dart set('userName', userName) ``` to save a variable
+  use ```dart get('userName') ``` to retrieve into a variable for your use
+
 
 ## Getting started
 
 Link the class in the file it's required
 
 ## Usage
-
+Examples below using set & get
 ```dart
 Future setLogin () async {
   await FlutterSession().set('userName', userName);
   await FlutterSession().set('password', password);
   }
   
-Future setlLogin () async {
+Future getlLogin () async {
   await FlutterSession().get('userName');
   await FlutterSession().get('password');
   }
