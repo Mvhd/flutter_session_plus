@@ -40,4 +40,4 @@ Future getlLogin () async {
 ```
 
 ## Additional information
-This package was original built by Jhourlad Estrella in 2020 but stopped maintaining it. Now, I have updated it with null safety and will keep maintaining it with any flutter update.
+This package was originally built by Jhourlad Estrella in 2020 but stopped maintaining it. Now, I have updated it with null safety and will keep maintaining it with any flutter update.
