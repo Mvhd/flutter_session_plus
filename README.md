@@ -23,7 +23,7 @@ TODO: This package is used to manage sessions in flutter applications.
 
 ## Getting started
 
-Link the class in the file it's required
+Link the class in the file it's required e.g. ```import 'package:name of your root app/folder location of the FlutterSession class/flutter_session.dart';``` or you can import it from yaml by calling it under dependencies ```flutter_session_plus: ^0.0.1```
 
 ## Usage
 Examples below using set & get
