@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: This package is used to manage sessions in flutter applications.
+TODO: This package is used to manage sessions in flutter applications with base64.encode / utf8.decode obfuscation.
 
 ## Features
 
