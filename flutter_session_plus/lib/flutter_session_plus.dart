@@ -1,3 +1,70 @@
+import 'dart:convert';
+import 'dart:ui';
+import 'package:shared_preferences/shared_preferences.dart';
+
+/// flutter_session
+/// A package that adds session functionality to Flutter with Base64 obfuscation
+class FlutterSession {
+  final Map _session = {};
+  SharedPreferences? prefs;
+
+  Future _initSharedPrefs() async {
+    prefs ??= await SharedPreferences.getInstance();
+  }
+
+  Future<dynamic> get(String key) async {
+    await _initSharedPrefs();
+    final value = prefs?.get(key);
+
+    if (value is String) {
+      try {
+        // Attempt to decode from Base64 obfuscation
+        final decodedBytes = base64.decode(value);
+        final decodedString = utf8.decode(decodedBytes);
+        try {
+          return json.decode(decodedString);
+        } catch (_) {
+          return decodedString;
+        }
+      } catch (_) {
+        // Fallback if not Base64 encoded
+        try {
+          return json.decode(value);
+        } catch (_) {
+          return value;
+        }
+      }
+    }
+    return value;
+  }
+
+  Future<void> set(String key, dynamic value) async {
+    await _initSharedPrefs();
+
+    String rawString;
+    if (value is String) {
+      rawString = value;
+    } else if (value is int || value is bool || value is double) {
+      rawString = value.toString();
+    } else if (value is List<String>) {
+      rawString = json.encode(value);
+    } else if (value is Color) {
+      rawString = value.toARGB32().toString();
+    } else {
+      try {
+        rawString = json.encode((value as dynamic).toJson());
+      } catch (e) {
+        rawString = value.toString();
+      }
+    }
+
+    // Obfuscate (Base64 encode) before saving locally
+    final obfuscatedValue = base64.encode(utf8.encode(rawString));
+    await prefs?.setString(key, obfuscatedValue);
+
+    _session[key] = value;
+  }
+}
 
 library flutter_session_plus;
 import 'dart:convert';
